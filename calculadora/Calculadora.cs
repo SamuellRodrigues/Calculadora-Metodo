@@ -1,3 +1,4 @@
+using Layout;
 namespace Calculadora
 {
    class Operacoes
@@ -5,12 +6,12 @@ namespace Calculadora
       public static decimal ObterValores1()
       {
       repetir:
-         Console.Write("Informer o primeiro valor :");
+         Formatacao.Cor("Informer o primeiro valor :", ConsoleColor.Blue);
 
 
          if (!decimal.TryParse(Console.ReadLine(), out decimal valor))
          {
-            Console.WriteLine("Valor invalido!");
+            Formatacao.Cor("Valor invalido!", ConsoleColor.Red);
             goto repetir;
          }
          else
@@ -23,7 +24,7 @@ namespace Calculadora
       public static string ObterSinal()
       {
 
-         Console.Write("Insira a operação que deseja fazer ( +, -, *, /): ");
+         Formatacao.Cor("Insira a operação que deseja fazer ( +, -, *, /): ", ConsoleColor.Yellow);
 
          string sinal = Console.ReadLine();
          return sinal;
@@ -38,12 +39,12 @@ namespace Calculadora
       public static decimal ObterValores2()
       {
       repetir:
-         Console.Write("Informer o segundo valor :");
+         Formatacao.Cor("Informer o segundo valor :", ConsoleColor.Blue);
 
 
          if (!decimal.TryParse(Console.ReadLine(), out decimal valor))
          {
-            Console.WriteLine("Valor invalido!");
+            Formatacao.Cor("Valor invalido!", ConsoleColor.Red);
             goto repetir;
          }
          else
@@ -52,6 +53,9 @@ namespace Calculadora
          }
 
       }
+
+
+
 
 
 
@@ -81,7 +85,8 @@ namespace Calculadora
 
          }
          {
-            Console.WriteLine($"A soma dos valores {var1} {sinal} {var3} = {resposta}");
+               
+            Formatacao.Cor($"A soma dos valores {var1} {sinal} {var3} = {resposta}",ConsoleColor.Green);
          }
 
       }
